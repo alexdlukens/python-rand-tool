@@ -8,7 +8,7 @@ description: |
   to seed the random number generator.
 
 grade: devel
-confinement: devmode
+confinement: strict
 
 parts:
   main:
