@@ -3,7 +3,7 @@
 Example MVP snap package for trying out the snapcraft build process. When installed, the snap exposes a cli application "py-rand-tool" which lets users generate a random int or float number. Users can specify the min/max values and generator seed.
 
 ```
-usage: rand-tool [-h] [-v] [-i] [-f] [--min MIN] [--max MAX] [--seed SEED]
+usage: py-rand-tool [-h] [-v] [-i] [-f] [--min MIN] [--max MAX] [--seed SEED]
 
 Generate a random integer or float.
 
