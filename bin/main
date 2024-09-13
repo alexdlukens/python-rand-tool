@@ -1,8 +1,7 @@
+#!/usr/bin/env python3
 import argparse
 import random
 import sys
-
-
 
 
 def main():
@@ -24,8 +23,14 @@ def main():
     )
     parser.add_argument("--min", help="Minimum value", default=0, dest="min")
     parser.add_argument("--max", help="Maximum value", default=100, dest="max")
-    
+    parser.add_argument(
+        "--seed", help="Seed value", default=None, type=int, dest="seed"
+    )
+
     args = parser.parse_args()
+
+    if args.seed:
+        random.seed(args.seed)
 
     assert args.min < args.max, "Minimum value must be less than maximum value"
 
