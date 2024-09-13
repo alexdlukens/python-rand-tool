@@ -25,8 +25,8 @@ def main():
         help="Generate a random float",
         dest="_float",
     )
-    parser.add_argument("--min", help="Minimum value", default=0, dest="min")
-    parser.add_argument("--max", help="Maximum value", default=100, dest="max")
+    parser.add_argument("--min", help="Minimum value", default=0, dest="min", type=float)
+    parser.add_argument("--max", help="Maximum value", default=100, dest="max", type=float)
     parser.add_argument(
         "--seed", help="Seed value", default=None, type=int, dest="seed"
     )
