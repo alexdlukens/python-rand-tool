@@ -5,16 +5,20 @@ import sys
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Generate a random integer or float.")
-    group = parser.add_mutually_exclusive_group(required=True)
-    group.add_argument(
+    parser = argparse.ArgumentParser(
+        prog="rand-tool",
+        description="Generate a random integer or float.",
+        epilog="Made by Alex Lukens in NYC",
+    )
+    parser.add_argument("-v", "--version", action="version", version="%(prog)s 1.0")
+    parser.add_argument(
         "-i",
         "--int",
         action="store_true",
         help="Generate a random integer",
         dest="_int",
     )
-    group.add_argument(
+    parser.add_argument(
         "-f",
         "--float",
         action="store_true",
@@ -28,6 +32,13 @@ def main():
     )
 
     args = parser.parse_args()
+
+    if not args._int and not args._float:
+        print("Please specify either -i for int or -f for float")
+        sys.exit(1)
+    elif args._int and args._float:
+        print("Please specify either -i for int or -f for float")
+        sys.exit(1)
 
     if args.seed:
         random.seed(args.seed)
