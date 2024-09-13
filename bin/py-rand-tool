@@ -6,7 +6,7 @@ import sys
 
 def main():
     parser = argparse.ArgumentParser(
-        prog="rand-tool",
+        prog="py-rand-tool",
         description="Generate a random integer or float.",
         epilog="Made by Alex Lukens in NYC",
     )
